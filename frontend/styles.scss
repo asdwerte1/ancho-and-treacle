@@ -1,0 +1,83 @@
+@use "sass:color";
+
+$treacleBlack: #161515;
+$charcoalGrey: #2a2827;
+$warmTreacle: #d28d42;
+$white: #f6f4f0;
+$grey: #9c968e;
+
+.max-width-wrapper {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+body,
+html {
+    margin: 0;
+    background-color: #161515;
+    color: $white;
+
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    p {
+        padding-left: 40px;
+    }
+}
+
+.text-muted {
+    color: grey !important;
+}
+
+.live-stream-container, .gallery-container {
+    background-color: $charcoalGrey;
+    padding: 24px;
+    border-radius: 12px;
+    color: $white;
+}
+
+.highlight-text {
+    color: $warmTreacle;
+}
+
+.photo-card {
+    background-color: color.adjust($charcoalGrey, $lightness: 4%);
+    border: 2px solid $white;
+    padding: 12px;
+    border-radius: 6px;
+    transition: transform 0.5s ease;
+    
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .highlight-date {
+        color: $warmTreacle;
+        font-weight: 700;
+    }
+
+    .opacity-0 {
+        opacity: 0;
+    }
+
+    .transition-fade {
+        transition: opacity 0.3s ease-in-out;
+    }
+}
