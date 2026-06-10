@@ -24,16 +24,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
 
       card.innerHTML = `
-                    <figure class="m-0 p-0">
-                      <img  src="/images/${photo.name}"
-                            alt="Ancho and Treacle Capture"
-                            class="img-fluid rounded object-fit-cover flex-grow-1 opacity-0 transition-fade"
-                            loading="lazy"
-                            onload="this.classList.remove('opacity-0')">
-                      <figcaption class="pt-2 text-start small">
-                        Captured: <span class="highlight-date">${cleanDate}</span>
-                      </figcaption>
-                    </figure>`;
+                    <div class="photo-card-inner">
+                      <figure class="m-0 p-0 d-flex flex-column h-100">
+                        <img  src="/images/${photo.name}"
+                              alt="Ancho and Treacle Capture"
+                              class="img-fluid rounded object-fit-cover flex-grow-1 opacity-0 transition-fade"
+                              loading="lazy"
+                              onload="this.classList.remove('opacity-0')">
+                        <figcaption class="pt-2 text-start small">
+                          Captured: <span class="highlight-date">${cleanDate}</span>
+                        </figcaption>
+                      </figure>
+                    </div>`;
 
       galleryGrid.appendChild(card);
     });
