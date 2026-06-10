@@ -26,14 +26,24 @@ html {
 }
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-
     p {
-        padding-left: 40px;
+        padding-left: 10%;
     }
+}
+
+header {
+    img {
+        border: solid thin transparent;
+        border-radius: 12px;
+        width: 120px;
+    }
+}
+
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .text-muted {
@@ -50,6 +60,10 @@ footer {
 
 .highlight-text {
     color: $warmTreacle;
+}
+
+.bold {
+    font-weight: bolder;
 }
 
 .photo-card {
