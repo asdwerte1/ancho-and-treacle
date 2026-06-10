@@ -1,0 +1,15 @@
+# Allow seach engines to crawl
+User-agent: *
+Allow: /$
+Allow: /style.css
+Allow: /script.js
+Allow: /media/
+
+# Disallow indexing of raw background iamge directory structure - pulled from home storage
+Disallow: /images/
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
