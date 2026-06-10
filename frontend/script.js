@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const galleryGrid = document.getElementById("gallery-grid");
 
+  const yearElement = document.getElementById("year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
   try {
     const response = await fetch("/api/photos");
     if (!response.ok) {
