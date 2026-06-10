@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       card.innerHTML = `
                     <figure class="m-0 p-0">
-                      <img  src="/api/photos/${photo.name}"
+                      <img  src="/images/${photo.name}"
                             alt="Ancho and Treacle Capture"
                             class="img-fluid rounded object-fit-cover flex-grow-1 opacity-0 transition-fade"
                             loading="lazy"
