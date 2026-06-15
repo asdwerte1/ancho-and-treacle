@@ -4,7 +4,7 @@ from routes.main_routes import main_bp
 import os
 from utils.utils import read_config
 
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
 CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
 
