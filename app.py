@@ -4,13 +4,14 @@ from routes.main_routes import main_bp
 import os
 from utils.utils import read_config
 
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
+CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
+
 def create_app():
     
     app = Flask(__name__)
-    
-    root_dir = os.path.dirname(os.path.abspath(__file__))
-    config_path = os.path.join(root_dir, "config.json")
-    config_data = read_config(config_path)
+    config_data = read_config(CONFIG_PATH)
     app.config.update(config_data)
     
     configured_domain = app.config.get("app_data", {}).get("domain", "")

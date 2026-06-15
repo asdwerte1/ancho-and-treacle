@@ -1,8 +1,39 @@
 import os
+import json
 import datetime
 from models.PhotoObject import PhotoObject
 from utils.utils import read_config
-from flask import current_app
+from flask import current_app, Response
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
+CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
+
+def root() -> None:
+    html_path = os.path.join(FRONTEND_DIR, "index.html")
+    with open(html_path, "r", encoding="utf-8") as file:
+        html_content = file.read()
+    
+    try:
+        with open(CONFIG_PATH, "r", encoding="utf-8") as file:
+            config_data = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        config_data = {}
+        
+    show_tunnel_notice = config_data.get("show_tunnel_text", False)
+    
+    if show_tunnel_notice:
+        notice_element = """
+        <p class="ml-3">Look out for quick zoomies through the <span class="highlight-text bold">tunnel</span>, or if they are being quiet
+        and hiding sudden rocking of the tunnel as one of them moves inside it.</p>
+        """
+    else:
+        notice_element = ""
+        
+    rendered_content = html_content.replace("<!-- DYNAMIC_TUNNEL_NOTICE -->", notice_element)
+    
+    return Response(rendered_content, mimetype="text/html")
+        
 
 def get_photos() -> list:
     

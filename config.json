@@ -3,5 +3,6 @@
         "port": "8082",
         "domain": "https://ancho-and-treacle.markhamhome.uk"
     },
-    "photo_file_path": "/mnt/storage/nextcloud/data/admin/files/Shared Gallery/Ancho and Treacle"
+    "photo_file_path": "/mnt/storage/nextcloud/data/admin/files/Shared Gallery/Ancho and Treacle",
+    "show_tunnel_text": true
 }

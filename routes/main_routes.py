@@ -7,7 +7,7 @@ FRONTEND_FOLDER = path.join(path.dirname(path.dirname(__file__)), "frontend")
 
 @main_bp.route("/", methods=["GET"])
 def index():
-    return send_from_directory(FRONTEND_FOLDER, "index.html")
+    return main_controllers.root()
 
 @main_bp.route("/api/photos", methods=["GET"])
 def photos_route():
