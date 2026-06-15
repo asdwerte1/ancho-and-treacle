@@ -60,15 +60,21 @@ header img {
 .photo-card .photo-card-inner {
   background-color: rgb(52.5777777778, 50.0740740741, 48.8222222222);
   border: 2px solid #f6f4f0;
-  padding: 12px;
+  padding: 8px;
   border-radius: 6px;
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 .photo-card:hover {
   transform: translateY(-2px);
+}
+.photo-card .img-wrapper {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 4px;
 }
 .photo-card img {
   width: 100%;

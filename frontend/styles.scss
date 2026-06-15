@@ -73,9 +73,9 @@ header {
     .photo-card-inner {
         background-color: color.adjust($charcoalGrey, $lightness: 4%);
         border: 2px solid $white;
-        padding: 12px;
+        padding: 8px;
         border-radius: 6px;
-        transition: transform 0.5s ease;
+        transition: transform 1s ease;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -83,6 +83,13 @@ header {
 
     &:hover {
         transform: translateY(-2px);
+    }
+
+    .img-wrapper {
+        width: 100%;
+        height: 160px;
+        overflow: hidden;
+        border-radius: 4px;
     }
 
     img {
