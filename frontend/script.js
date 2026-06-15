@@ -6,15 +6,37 @@ document.addEventListener("DOMContentLoaded", async () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
+  await getPhotos(galleryGrid, 0);
+
+  document.getElementById("load-more").addEventListener("click", async () => {
+    const numberOfPhotos = document
+      .getElementById("gallery-grid")
+      .querySelectorAll("img").length;
+    await getPhotos(galleryGrid, numberOfPhotos);
+  });
+});
+
+async function getPhotos(gridElement, numberOfPhotos = 0) {
+  if (!gridElement) return;
+
+  let response;
+
   try {
-    const response = await fetch("/api/photos");
+    if (numberOfPhotos == 0) {
+      response = await fetch("/api/photos");
+    } else {
+      response = await fetch(`/api/photos?number=${numberOfPhotos}`);
+    }
+
     if (!response.ok) {
       throw new Error("API response was not successful");
     }
 
     const photos = await response.json();
 
-    galleryGrid.innerHTML = "";
+    if (numberOfPhotos === 0) {
+      gridElement.innerHTML = "";
+    }
 
     photos.forEach((photo) => {
       const card = document.createElement("article");
@@ -49,4 +71,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Error fetching images.", error);
   }
-});
+}

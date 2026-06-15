@@ -34,7 +34,7 @@ def root() -> None:
     return Response(rendered_content, mimetype="text/html")
         
 
-def get_photos() -> list:
+def get_photos(number_of_images = None) -> list:
     
     """_summary_
         Fetches the four most recent photos from storage area.
@@ -69,6 +69,9 @@ def get_photos() -> list:
 
     filtered_out_videos.sort(key=lambda x: x.get_date(), reverse=True)
     
-    top_6_images = filtered_out_videos[:6]
+    if number_of_images is None:
+        images = filtered_out_videos[:6]
+    else:
+        images = filtered_out_videos[number_of_images:number_of_images + 2]
         
-    return top_6_images
+    return images

@@ -1,5 +1,5 @@
 from os import path
-from flask import Blueprint, send_from_directory, jsonify
+from flask import Blueprint, send_from_directory, jsonify, request
 from controllers import main_controllers
 
 main_bp = Blueprint("main", __name__)
@@ -11,7 +11,8 @@ def index():
 
 @main_bp.route("/api/photos", methods=["GET"])
 def photos_route():
-    raw_photos = main_controllers.get_photos()
+    number_of_loaded_photos = request.args.get("number", default=None, type=int)
+    raw_photos = main_controllers.get_photos(number_of_images=number_of_loaded_photos)
     json_photos = [{
         "name": p.get_name(),
         "size": p.get_size(),
