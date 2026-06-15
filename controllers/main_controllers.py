@@ -2,7 +2,6 @@ import os
 import json
 import datetime
 from models.PhotoObject import PhotoObject
-from utils.utils import read_config
 from flask import current_app, Response
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -70,6 +69,6 @@ def get_photos() -> list:
 
     filtered_out_videos.sort(key=lambda x: x.get_date(), reverse=True)
     
-    top_4_images = filtered_out_videos[:4]
+    top_6_images = filtered_out_videos[:6]
         
-    return top_4_images
+    return top_6_images
