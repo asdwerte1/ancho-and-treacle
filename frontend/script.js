@@ -66,7 +66,7 @@ async function getPhotos(gridElement, numberOfPhotos = 0) {
                       </figure>
                     </div>`;
 
-      galleryGrid.appendChild(card);
+      gridElement.appendChild(card);
     });
   } catch (error) {
     console.error("Error fetching images.", error);
