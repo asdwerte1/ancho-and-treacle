@@ -69,6 +69,7 @@ header {
 .photo-card {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
     .photo-card-inner {
         background-color: color.adjust($charcoalGrey, $lightness: 4%);
@@ -79,10 +80,11 @@ header {
         height: 100%;
         display: flex;
         flex-direction: column;
-    }
 
-    &:hover {
-        transform: translateY(-2px);
+        &:hover {
+            transform: translateY(-2px);
+        }
+
     }
 
     .img-wrapper {

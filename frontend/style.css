@@ -56,6 +56,7 @@ header img {
 .photo-card {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .photo-card .photo-card-inner {
   background-color: rgb(52.5777777778, 50.0740740741, 48.8222222222);
@@ -67,7 +68,7 @@ header img {
   display: flex;
   flex-direction: column;
 }
-.photo-card:hover {
+.photo-card .photo-card-inner:hover {
   transform: translateY(-2px);
 }
 .photo-card .img-wrapper {
