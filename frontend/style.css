@@ -44,6 +44,25 @@ header img {
   border-radius: 12px;
   color: #f6f4f0;
 }
+.live-stream-container button,
+.gallery-container button {
+  width: 160px;
+  margin: auto;
+  border: solid thin transparent;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: #161515;
+  color: #f6f4f0;
+  box-shadow: 0 2px 5px #161515;
+  transition: all 0.2s ease-in-out;
+}
+.live-stream-container button:hover,
+.gallery-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px #161515;
+  color: #d28d42;
+}
 
 .highlight-text {
   color: #d28d42;
