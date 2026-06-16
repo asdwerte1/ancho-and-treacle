@@ -43,6 +43,7 @@ header img {
   padding: 24px;
   border-radius: 12px;
   color: #f6f4f0;
+  box-shadow: 0 0 2px 2px #2a2827;
 }
 .live-stream-container button,
 .gallery-container button {
